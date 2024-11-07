@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  asset_id: 1
+  shares: 9.99
+  cost_per_share: 9.99
+  trade_date: 2024-11-06
+
+two:
+  user_id: 1
+  asset_id: 1
+  shares: 9.99
+  cost_per_share: 9.99
+  trade_date: 2024-11-06
