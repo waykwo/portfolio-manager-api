@@ -1,6 +1,6 @@
-class CreateAssets < ActiveRecord::Migration[7.1]
+class CreateFinancialAssets < ActiveRecord::Migration[7.1]
   def change
-    create_table :assets do |t|
+    create_table :financial_assets do |t|
       t.string :name
       t.string :ticker
       t.text :description

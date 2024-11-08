@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_11_07_025748) do
+ActiveRecord::Schema[7.1].define(version: 2024_11_08_011752) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "assets", force: :cascade do |t|
+  create_table "financial_assets", force: :cascade do |t|
     t.string "name"
     t.string "ticker"
     t.text "description"
