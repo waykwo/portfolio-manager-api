@@ -15,8 +15,8 @@ class TransactionsController < ApplicationController
 
   def create
     @transaction = Transaction.new(
-      user_id: curent_user.id,
-      asset_id: params[:asset_id],
+      user_id: current_user.id,
+      financial_asset_id: params[:financial_asset_id],
       shares: params[:shares],
       cost_per_share: params[:cost_per_share],
       trade_date: params[:trade_date]
