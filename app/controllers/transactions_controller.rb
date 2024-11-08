@@ -1,17 +1,21 @@
 class TransactionsController < ApplicationController
   def index
-    @transactions = Transaction.all
+    @transactions = Transaction.where(user_id: current_user.id)
     render :index
   end
 
   def show
     @transaction = Transaction.find_by(id: params[:id])
-    render :show
+    if @transaction.user_id == current_user.id
+      render :show
+    else
+      render json: {}, status: :unauthorized
+    end
   end
 
   def create
     @transaction = Transaction.new(
-      user_id: params[:user_id],
+      user_id: curent_user.id,
       asset_id: params[:asset_id],
       shares: params[:shares],
       cost_per_share: params[:cost_per_share],
@@ -23,12 +27,16 @@ class TransactionsController < ApplicationController
 
   def update
     @transaction = Transaction.find_by(id: params[:id])
-    @transaction.update(
-      shares: params[:shares] || @transaction.shares,
-      cost_per_share: params[:cost_per_share] || @transaction.cost_per_share,
-      trade_date: params[:trade_date] || @transaction.trade_date
-    )
-    render :show
+    if @transaction.user_id == current_user.id
+      @transaction.update(
+        shares: params[:shares] || @transaction.shares,
+        cost_per_share: params[:cost_per_share] || @transaction.cost_per_share,
+        trade_date: params[:trade_date] || @transaction.trade_date
+      )
+      render :show
+    else
+      render json: {}, status: :unauthorized
+    end
   end
 
 end
