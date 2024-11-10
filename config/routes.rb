@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get "/financial_assets/:id" => "financial_assets#show"
   post "/financial_assets" => "financial_assets#create"
   patch "/financial_assets/:id" => "financial_assets#update"
+  delete "/financial_assets/:id" => "financial_assets#destroy"
   
   get "/transactions" => "transactions#index"
   get "/transactions/:id" => "transactions#show"

@@ -21,7 +21,7 @@ class TransactionsController < ApplicationController
       cost_per_share: params[:cost_per_share],
       trade_date: params[:trade_date]
     )
-    @transaction.save
+    @transaction.save!
     render :show
   end
 

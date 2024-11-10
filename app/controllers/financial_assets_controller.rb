@@ -17,8 +17,14 @@ class FinancialAssetsController < ApplicationController
       asset_class: params[:asset_class],
       latest_price: params[:latest_price]
     )
-    @financial_asset.save
-    render :show
+    # @financial_asset.save
+    # render :show
+
+    if @financial_asset.save
+      render :show
+    else
+      render json: {message: "Asset was not created. Is the ticker unique?"}
+    end
   end
 
   def update
@@ -31,6 +37,12 @@ class FinancialAssetsController < ApplicationController
       latest_price: params[:latest_price] || @financial_asset.latest_price
     )
     render :show
+  end
+
+  def destroy
+    @financial_asset = FinancialAsset.find_by(id: params[:id])
+    @financial_asset.destroy
+    render json: {message: "Asset destroyed successfully"}
   end
 
 end
