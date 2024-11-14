@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   get "/financial_assets" => "financial_assets#index"
   get "/financial_assets/:id" => "financial_assets#show"
+  get "/asset_data" => "financial_assets#asset_data"
   post "/financial_assets" => "financial_assets#create"
   patch "/financial_assets/:id" => "financial_assets#update"
   delete "/financial_assets/:id" => "financial_assets#destroy"
@@ -19,6 +20,7 @@ Rails.application.routes.draw do
   get "/transactions/:id" => "transactions#show"
   post "/transactions" => "transactions#create"
   patch "/transactions/:id" => "transactions#update"
+
 
   # Defines the root path route ("/")
   # root "posts#index"

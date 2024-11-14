@@ -29,12 +29,9 @@ class TransactionsController < ApplicationController
     @transaction = Transaction.find_by(id: params[:id])
     if @transaction.user_id == current_user.id
       @transaction.update(
-        shares: params[:shares],
-        cost_per_share: params[:cost_per_share],
-        trade_date: params[:trade_date]
-        # shares: params[:shares] || @transaction.shares,
-        # cost_per_share: params[:cost_per_share] || @transaction.cost_per_share,
-        # trade_date: params[:trade_date] || @transaction.trade_date
+        shares: params[:shares] || @transaction.shares,
+        cost_per_share: params[:cost_per_share] || @transaction.cost_per_share,
+        trade_date: params[:trade_date] || @transaction.trade_date
       )
       render :show
     else
