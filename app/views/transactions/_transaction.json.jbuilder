@@ -11,3 +11,4 @@ json.financial_asset transaction.financial_asset
 json.asset_name transaction.financial_asset.name
 json.asset_ticker transaction.financial_asset.ticker
 json.asset_class transaction.financial_asset.asset_class
+json.latest_price transaction.financial_asset.latest_price
