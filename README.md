@@ -1,24 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Portfolio Manager is a Ruby on Rails/React app for tracking your investment portfolio. A key feature is the app summarizes your investments by asset class, which is helpful when you are building a portfolio where asset allocation is important. This app summarizes your investments by asset allocation so you can make rebalancing decisions on that.
 
-Things you may want to cover:
+Built with Ruby on Rails 7.1.5
+Required gems:
+* jwt
+* rack-cors
+* http
+* dalli
 
-* Ruby version
+[Twelve Data API](https://rapidapi.com/twelve-data1-twelve-data-default/api/twelve-data1)
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The React frontend repository is [here](https://github.com/waykwo/portfolio-manager-frontend).
