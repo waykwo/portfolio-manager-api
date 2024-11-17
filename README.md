@@ -10,6 +10,6 @@ Required gems:
 * http
 * dalli
 
-[Twelve Data API](https://rapidapi.com/twelve-data1-twelve-data-default/api/twelve-data1)
+The app is using [Twelve Data API](https://rapidapi.com/twelve-data1-twelve-data-default/api/twelve-data1) to get updated stock data.
 
 The React frontend repository is [here](https://github.com/waykwo/portfolio-manager-frontend).
