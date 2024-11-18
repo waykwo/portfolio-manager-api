@@ -7,7 +7,7 @@ class StockDataService
   end
 
   def fetch_stock_data
-    Rails.cache.fetch(@cache_key, expires_in: 1.hour) do
+    Rails.cache.fetch(@cache_key, expires_in: 24.hour) do
       fetch_stock_data_from_api
     end
   end
@@ -16,7 +16,6 @@ class StockDataService
     Rails.cache.read(@cache_key)
   end
 
-  # private
 
   def fetch_stock_data_from_api
     uri = URI("https://twelve-data1.p.rapidapi.com/time_series?outputsize=30&symbol=#{@ticker}&interval=1day&format=json")
